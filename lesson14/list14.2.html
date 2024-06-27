@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+        <!-- jQueryの読み込み -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(function() {
+                $("#switch").on("click", function() {
+                    $("#block").toggle("normal");
+                });
+            });
+        </script>
+        <style type="text/css">
+            #block {
+                background-color: pink;
+                width: 200px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button id="switch">切り替え</button>
+        </div>
+        <div id="block"></div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+        <!-- jQueryの読み込み -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(function() {
+                $.getJSON("item.json",
+                    function(data) {
+                        for(var i=0; i<data.length; i++) {
+                            $("#dataTable").append("<tr></tr>")//<table>タグの子要素として末尾に<tr>タグを追加
+                                .find("tr:last")//末尾の<tr>タグを抽出。要素群の子孫要素の中から。
+                                .append("<td>" + data[i].code + "</td>")//<tr>タグの子要素として末尾に追加。
+                                .append("<td>" + data[i].name + "</td>")
+                                .append("<td>" + data[i].price + "</td>");
+                        }
+                    }
+                )
+            });
+        </script>
+    </head>
+    <body>
+        <table id="dataTable">
+            <tr><th>code</th><th>name</th><th>price</th></tr>
+        </table>
+    </body>
+</html>

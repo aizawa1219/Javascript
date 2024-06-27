@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+        <!-- jQueryの読み込み -->
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(function() {
+                $("#msg").addClass("highlight");
+            });
+        </script>
+        <style type="text/css">
+            .large {
+                font-size: 30px;
+            }
+            .highlight {
+                color: white;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="msg" class="large">こんにちは</p>
+    </body>
+</html>

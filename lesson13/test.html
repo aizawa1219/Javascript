@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <head>
+            <title>JavaScript の練習</title>
+            <meta charset="utf-8">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script>
+                $(function() {
+                var url = "https://graph.facebook.com/ubukata.kanako?fields=name,link,picture&callback=?";
+                $.getJSON(url, function(json) {
+                $("#pic").append("<img src='" + json.picture.data.url + "'>")
+                $("#name").append("<a href='" + json.link + "'>" + json.name + "</a>");
+                });
+                });
+            </script>
+    </head>
+ <body>
+ <h1>Facebook やってます！</h1>
+ <div id="pic"></div>
+ <div id="name"></div>
+ </body>
+</html>
